@@ -1,9 +1,11 @@
 pipeline {
 	agent any
+    label 'ubuntu' //label the machine name as which one has been created as node } 
 	stages {
 	stage('removing old files') {
 	steps {
 		sh "sudo rm -rvf /var/www/html/laravel-pos/*"
+        //Deletion of the hidden file inside the folder/ append the file in production phase
 		sh "sudo rm -rvf /var/www/html/laravel-pos/.git*"
 		sh "sudo rm -rvf /var/www/html/laravel-pos/.e*"
 		sh "sudo rm -rvf /var/www/html/laravel-pos/.s*"
